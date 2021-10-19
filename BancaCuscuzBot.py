@@ -33,8 +33,8 @@ def cabecalhoVendas():
 
 def dinheiro(update, context):
     arquivoProdutos = open("produtos.csv", "r+")
-    arquivoVendidosLeitura = open("vendidos.csv", "r+")
     arquivoVendidosEscrita = open("vendidos.csv", "a+")
+    arquivoVendidosLeitura = open("vendidos.csv", "r+")
 
     vendas = arquivoVendidosLeitura.readlines()
 
@@ -76,8 +76,8 @@ def dinheiro(update, context):
 
 def cartao(update, context):
     arquivoProdutos = open("produtos.csv", "r+")
-    arquivoVendidosLeitura = open("vendidos.csv", "r+")
     arquivoVendidosEscrita = open("vendidos.csv", "a+")
+    arquivoVendidosLeitura = open("vendidos.csv", "r+")
 
     vendas = arquivoVendidosLeitura.readlines()
 
@@ -103,12 +103,12 @@ def cartao(update, context):
     if(vendaRealizada == 1):
         update.message.reply_text("Venda já feita!")
     else:
-        if(len(context.args) == 2):
-            valorProduto = int(vendidoSeperado[2]) - int(context.args[1])
-            arquivoVendidosEscrita.write(str((numLinhas + 1 )) + "," + str(vendidoSeperado[0]) + "," + str(vendidoSeperado[1]) + "," + str(valorProduto) + ",Cartão" + "," + str(vendidoSeperado[3]) + "," + str(vendidoSeperado[4]) + ", \n") 
+        if(len(context.args) == 3):
+            valorProduto = int(vendidoSeperado[2]) - int(context.args[2])
+            arquivoVendidosEscrita.write(str((numLinhas + 1 )) + "," + str(vendidoSeperado[0]) + "," + str(vendidoSeperado[1]) + "," + str(valorProduto) + ",Cartão" + "," + str(context.args[1]) + "," + str(vendidoSeperado[3]) + "," + str(vendidoSeperado[4]) + ", \n") 
             update.message.reply_text("Venda realizada com sucesso!")
         else:
-            arquivoVendidosEscrita.write(str((numLinhas + 1 )) + "," + str(vendidoSeperado[0]) + "," + str(vendidoSeperado[1]) + "," + str(vendidoSeperado[2]) + ",Cartão" + "," + str(vendidoSeperado[3]) + "," + str(vendidoSeperado[4]) + ", \n") 
+            arquivoVendidosEscrita.write(str((numLinhas + 1 )) + "," + str(vendidoSeperado[0]) + "," + str(vendidoSeperado[1]) + "," + str(vendidoSeperado[2]) + ",Cartão" + "," + str(context.args[1]) + "," + str(vendidoSeperado[3]) + "," + str(vendidoSeperado[4]) + ", \n") 
             update.message.reply_text("Venda realizada com sucesso!")
     
 
@@ -121,10 +121,10 @@ def vendidos(update, context):
         vendidos = linha.split(',')
         update.message.reply_text(str(vendidos[1]) + " " + str(vendidos[2]) + " " + str(vendidos[3]) + " " + "(" + str(vendidos[4]) + ")" + " " + str(vendidos[5]))
 
-def lucro(update, context):
+def lucro(up1date, context):
     arquivoVendidosLeitura = open("vendidos.csv", "r+")
+    arquivoLucroEscrita = open("lucro.csv", "w+")
     arquivoLucroLeitura = open("lucro.csv", "r+")
-    arquivoLucroEscrita = open("lucro.csv", "a+")
 
     vendedores = set()
     totalCuscuz = 0
@@ -133,16 +133,27 @@ def lucro(update, context):
 
     for linha in arquivoVendidosLeitura:
         vendidos = linha.split(',')
-        if(int(vendidos[6]) == 1):
-            totalCuscuz = totalCuscuz + (float(vendidos[3]) * 0.1)
-        else:
-            totalCuscuz = totalCuscuz + (float(vendidos[3]) * 0.2)
         if(vendidos[4] == "Cartão"):
-            totalCartao = totalCartao + (float(vendidos[3]) * 0.046)
-        vendedores.add(vendidos[5])
+            if(int(vendidos[7]) == 1):
+                totalCuscuz = totalCuscuz + 0
+            else:
+                totalCuscuz = totalCuscuz + (float(vendidos[3]) * 0.1)
+            if(vendidos[5] == "débito" or vendidos[5] == "debito"):
+                totalCartao = totalCartao + (float(vendidos[3]) * 0.019)
+            elif(vendidos[5] == "1x"):
+                totalCartao = totalCartao + (float(vendidos[3]) * 0.046)
+            elif(vendidos[5] == "2x"):
+                totalCartao = totalCartao + (float(vendidos[3]) * 0.061)
+            vendedores.add(vendidos[6])
+        else:
+            if(int(vendidos[6]) == 1):
+                totalCuscuz = totalCuscuz + 0
+            else:
+                totalCuscuz = totalCuscuz + (float(vendidos[3]) * 0.1)
+            vendedores.add(vendidos[5])
 
-    arquivoLucroEscrita.write("Cuscuz HQ," + str(totalCuscuz) + "," + " \n")
-    arquivoLucroEscrita.write("Cartão," + str(totalCartao) + "," + " \n")
+    arquivoLucroEscrita.write("Cuscuz HQ," + str(totalCuscuz) + " \n")
+    arquivoLucroEscrita.write("Cartão," + str(totalCartao) + " \n")
 
     arquivoVendidosLeitura.close()
 
@@ -151,19 +162,30 @@ def lucro(update, context):
         linha = ""
         for linha in arquivoVendidosLeitura:
             vendidos = linha.split(',')
-            if(it == vendidos[5]):
-                if(vendidos[4] == "Cartão"):
-                    if(int(vendidos[6]) == 1):
-                        totalVendedor = totalVendedor + (float(vendidos[3]) * 0.854)
+            if(vendidos[4] == "Cartão"):
+                if(it == vendidos[6]):
+                    if(int(vendidos[7]) == 1):
+                        if(vendidos[5] == "débito" or vendidos[5] == "debito"):
+                            totalVendedor = totalVendedor + (float(vendidos[3]) * 0.981)
+                        elif(vendidos[5] == "1x"):
+                            totalVendedor = totalVendedor + (float(vendidos[3]) * 0.954)
+                        elif(vendidos[5] == "2x"):
+                            totalVendedor = totalVendedor + (float(vendidos[3]) * 0.939)
                     else:
-                        totalVendedor = totalVendedor + (float(vendidos[3]) * 0.754)
+                        if(vendidos[5] == "débito" or vendidos[5] == "debito"):
+                            totalVendedor = totalVendedor + (float(vendidos[3]) * 0.881)
+                        elif(vendidos[5] == "1x"):
+                            totalVendedor = totalVendedor + (float(vendidos[3]) * 0.854)
+                        elif(vendidos[5] == "2x"):
+                            totalVendedor = totalVendedor + (float(vendidos[3]) * 0.839)
                 else:
-                    if(int(vendidos[6]) == 1):
-                        totalVendedor = totalVendedor + (float(vendidos[3]) * 0.9)
-                    else:
-                        totalVendedor = totalVendedor + (float(vendidos[3]) * 0.8)
+                    if(it == vendidos[5]):
+                        if(int(vendidos[6]) == 1):
+                            totalVendedor = totalVendedor + (float(vendidos[3]))# * 0.9)
+                        else:
+                            totalVendedor = totalVendedor + (float(vendidos[3]) * 0.9)
         
-        arquivoLucroEscrita.write(str(it) + "," + str(totalVendedor) + "," + " \n")
+        arquivoLucroEscrita.write(str(it) + "," + str(totalVendedor) + " \n")
         totalVendedor = 0
         arquivoVendidosLeitura.close()
 
@@ -182,9 +204,9 @@ def lucro(update, context):
             totalGeralDinheiro = totalGeralDinheiro + float(vendidos[3])
 
     
-    arquivoLucroEscrita.write("Total Vendas Cartão" + "," + str(totalGeralCartao) + "," + " \n")
-    arquivoLucroEscrita.write("Total Vendas Dinheiro" + "," + str(totalGeralDinheiro) + "," + " \n")
-    arquivoLucroEscrita.write("Total Geral de Vendas" + "," + str(totalGeral) + "," + " \n")
+    arquivoLucroEscrita.write("Total Vendas Cartão" + "," + str(totalGeralCartao) + " \n")
+    arquivoLucroEscrita.write("Total Vendas Dinheiro" + "," + str(totalGeralDinheiro) + " \n")
+    arquivoLucroEscrita.write("Total Geral de Vendas" + "," + str(totalGeral) + " \n")
 
     arquivoVendidosLeitura.close()
 
@@ -208,7 +230,7 @@ def ajuda(update, context):
                               "/buscar - Busca produtos na lista com todos os produtos. Deve-se passar além do comando o nome de algum produto. Ex: /buscar Lanterna Verde \n" + "\n" +
                               "/produtos - Mostra a lista com todos os produtos, contendo o código do produto, nome e preço do produto e nome do vendedor. Esse comando deve ser usado sem parâmetro. Ex: /produtos \n" + "\n" +
                               "/dinheiro - Realiza a venda de um produto na modalidade dinheiro. Essa venda pode ser realizada com ou sem desconto. Quando é feita uma busca pelo produto é retornado além do nome e do preço do produto um código único que deve ser utilizado no momento da venda. Esse comando deve ser usado passando como parâmetro o código do produto a ser vendido e opcionalmente um desconto. Exemplo sem desconto: /dinheiro 12. Exemplo com desconto /dinheiro 12 10 \n" + "\n" +
-                              "/cartao - Realiza a venda de um produto na modalidade cartao. Essa venda pode ser realizada com ou sem desconto. Quando é feita uma busca pelo produto é retornado além do nome e do preço do produto um código único que deve ser utilizado no momento da venda. Esse comando deve ser usado passando como parâmetro o código do produto a ser vendido e opcionalmente um desconto. Exemplo sem desconto: /cartao 12. Exemplo com desconto /cartao 12 10 \n" + "\n" +
+                              "/cartao - Realiza a venda de um produto na modalidade cartao. Obrigatóriamente deve-se passar se a venda é realizada no débito, 1x, ou 2x. Essa venda pode ser realizada com ou sem desconto. Quando é feita uma busca pelo produto é retornado além do nome e do preço do produto um código único que deve ser utilizado no momento da venda. Esse comando deve ser usado passando como parâmetro o código do produto a ser vendido, a modalidade da venda (débito, 1x ou 2x) e opcionalmente um desconto. Exemplo sem desconto: /cartao 12 2x. Exemplo com desconto /cartao 12 débito 10 \n" + "\n" +
                               "/vendidos - Mostra todos os produtos já vendidos. O comando deve ser usado sozinho sem nenhum parâmetro. Ex: /vendidos \n" + "\n" +
                               "/lucro - Cria uma planilha detalhada com os lucros de cada vendendor, além de já separar a porcentagem que ficará ára a banca do Cuscuz HQ e também as taxas da maquineta, caso alguma venda tenha sido feita no cartão. O comando deve ser usado sozinho sem nenhum parâmetro. Ex: /lucro \n" + "\n" +
                               "/planilha - Exibe a planilha detalhada dos lucros que foi gerada pelo comando /lucro. O comando deve ser usado sozinho sem nenhum parâmetro. Ex: /planilha \n" + "\n" +
