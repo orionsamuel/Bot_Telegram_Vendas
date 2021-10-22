@@ -119,7 +119,12 @@ def vendidos(update, context):
     arquivoVendidosLeitura = open("vendidos.csv", "r+")
     for linha in arquivoVendidosLeitura:
         vendidos = linha.split(',')
-        update.message.reply_text(str(vendidos[1]) + " " + str(vendidos[2]) + " " + str(vendidos[3]) + " " + "(" + str(vendidos[4]) + ")" + " " + str(vendidos[5]))
+        if(vendidos[4] == "Cartão"):
+           update.message.reply_text(str(vendidos[1]) + " " + str(vendidos[2]) + " " + str(vendidos[3]) + " " + "(" + str(vendidos[4]) + ")"
+                                     + " " + str(vendidos[5]) + " " + str(vendidos[6]))
+        else:
+            update.message.reply_text(str(vendidos[1]) + " " + str(vendidos[2]) + " " + str(vendidos[3]) + " " + "(" + str(vendidos[4]) + ")"
+                                      + " " + str(vendidos[5]))
 
 def lucro(up1date, context):
     arquivoVendidosLeitura = open("vendidos.csv", "r+")
@@ -178,12 +183,12 @@ def lucro(up1date, context):
                             totalVendedor = totalVendedor + (float(vendidos[3]) * 0.854)
                         elif(vendidos[5] == "2x"):
                             totalVendedor = totalVendedor + (float(vendidos[3]) * 0.839)
-                else:
-                    if(it == vendidos[5]):
-                        if(int(vendidos[6]) == 1):
-                            totalVendedor = totalVendedor + (float(vendidos[3]))# * 0.9)
-                        else:
-                            totalVendedor = totalVendedor + (float(vendidos[3]) * 0.9)
+            else:
+                if(it == vendidos[5]):
+                    if(int(vendidos[6]) == 1):
+                        totalVendedor = totalVendedor + (float(vendidos[3]))# * 0.9)
+                    else:
+                        totalVendedor = totalVendedor + (float(vendidos[3]) * 0.9)
         
         arquivoLucroEscrita.write(str(it) + "," + str(totalVendedor) + " \n")
         totalVendedor = 0
