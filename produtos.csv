@@ -1,115 +1,69 @@
-1,Hellblazer Origens Vol. 1,15,Leo,1, ,
-2,Hellblazer Origens Vol. 2,15,Leo,1, ,
-3,Lanterna Verde: Tropa dos Lanternas Verdes: O Lado Negro do Verde,15,Leo,1, ,
-4,Bone Vol. 1,50,Denilson,1, ,
-5,Crise de Identidade (minissérie em 7 partes),35,Denilson,1, ,
-6,Vingadores a Essência do Medo,50,Denilson,1, ,
-7,Hunter X Hunter Vol. 1,16,Higor Silva,0, ,
-8,Hunter X Hunter Vol. 2,16,Higor Silva,0, ,
-9,Hunter X Hunter Vol. 3,16,Higor Silva,0, ,
-10,Hunter X Hunter Vol. 4,16,Higor Silva,0, ,
-11,Hunter X Hunter Vol. 5,16,Higor Silva,0, ,
-12,Hunter X Hunter Vol. 6,16,Higor Silva,0, ,
-13,Hunter X Hunter Vol. 7,16,Higor Silva,0, ,
-14,Hunter X Hunter Vol. 8,16,Higor Silva,0, ,
-15,Pacote Hunter X Hunter 8 edições,115,Higor Silva,0, ,
-16,Naruto Gold Vol. 43,20,Higor Silva,0, ,
-17,Naruto Gold Vol. 47,20,Higor Silva,0, ,
-18,Batman - Lendas do Cavaleiro das Trevas: Alan Davis nº01,25,Andrécio,0, ,
-19,Batman - Lendas do Cavaleiro das Trevas: Alan Davis nº02,25,Andrécio,0, ,
-20,Batman - Lendas do Cavaleiro das Trevas: Jim Aparo nº01,25,Andrécio,0, ,
-21,Batman: A Máscara da Morte,15,Andrécio,0, ,
-22,Biblioteca Don Rosa - T. Patinhas e Donald nº01,60,Andrécio,0, ,
-23,Biblioteca Don Rosa - T. Patinhas e Donald nº02,60,Andrécio,0, ,
-24,Biblioteca Don Rosa - T. Patinhas e Donald nº05,60,Andrécio,0, ,
-25,Batman - A Espada de Azrael,10,Andrécio,0, ,
-26,Batman - Terra Um nº02,25,Andrécio,0, ,
-27,Ronin,100,Andrécio,0, ,
-28,Demolidor Frank Miller – Volume 1 ,30,Adriano,1, ,
-29,Falcão Negro – série em três edições completa,25,Adriano,1,, 
-30,Violent Cases – Neil Gaiman ,25,Adriano,1, ,
-31,Livro Mitologia Nordica – Neil Gaiman,20,Adriano,1, ,
-32,A Última tentação Neil Gaiman ,25,Adriano,1, ,
-33,Sandman – Noites sem fim,25,Adriano,1, ,
-34,Senhor dos anéis os três livros ( não vender separado) ,50,Adriano,1, ,
-35,Pacote Graphic Novel Tex (do 01 ao 04) – (não vender separado),60,Adriano,1,, 
-36,João e Maria – Livro Ilustrado Neil Gaiman ,20,Adriano,1, ,
-37,Hellblazer amaldiçoado volume 04 – Brian Azzarello ,18,Adriano,1, ,
-38,Espíritos da Vingança  ,10,Adriano,1, ,
-39,Graphic MSP - Astronauta. Assimetria ,20,Adriano,1, ,
-40,Graphic MSP - Astronauta. Singularidade ,20,Adriano,1, ,
-41,Vampiro Americano - Volume 6 ,45,Adriano,1, ,
-42,Minissérie A guerra de Luz e trevas -  Completa em 6 edições ,30,Adriano,1, ,
-43,Príncipe de Alloes – Moebius – Completa em  6 edições ,25,Adriano,1, ,
-44,Clube Vampiro  ,10,Adriano,1, ,
-45,Ei8ht – Rafael Albuquerque ,15,Adriano,1, ,
-46,Livro - O Rei de Amarelo  - Robert W Chambers,15,Adriano,1, ,
-47,Livro – Alice no País das Maravilhas – Zahar editora,15,Adriano,1, ,
-48,Livro a Bela e a Fera – Zahar Editora,15,Adriano,1, ,
-49,Folha Batmobile,27,Noély,1, ,
-50,Folha Batarang,27,Noély,1, ,
-51,Pôster Batman DK + capanga,37,Noély,1, ,
-52,Pôster Coringa,37,Noély,1, ,
-53,Pôster Supergirl,37,Noély,1, ,
-54,Pôster Thanagarian Hammer,37,Noély,1, ,
-55,Pôster Thor/Loki,37,Noély,1, ,
-56,Pôster Stormtrooper Rogue One,37,Noély,1, ,
-57,Pôster Rocket Racoon,37,Noély,1, ,
-58,Pôster Hella,37,Noély,1, ,
-59,Pôster Pantera Negra,37,Noély,1, ,
-60,Pôster Aquaman,37,Noély,1, ,
-61,Pôster Homem-Formiga & Vespa,37,Noély,1, ,
-62,Pôster Hulk/Valquíria,37,Noély,1, ,
-63,Pôster universo Batman,37,Noély,1, ,
-64,Pôster Kylo Ren (Rafael Albuquerque),12,Noély,1, ,
-65,Pôster Kylo Ren (Rafael Albuquerque),12,Noély,1, ,
-66,Pôster Kylo Ren (Rafael Albuquerque),12,Noély,1, ,
-67,Pôster Batman&Joker (Rafael Albuquerque),12,Noély,1, ,
-68,Pôster Dark Knight Returns  (Rafael Albuquerque),12,Noély,1, ,
-69,Pôster Batman e Batwoman (Rafael Albuquerque),12,Noély,1, ,
-70,Pôster Batman (Rafael Albuquerque),12,Noély,1, ,
-71,Pôster universo Batgirl (Rafael Albuquerque),20,Noély,1, ,
-72,Pin Vingadores,30,Noély,1, ,
-73,Chaveiro Homem-Formiga,30,Noély,1, ,
-74,Quebra-cabeça Batman 1000 peças,50,Noély,1, ,
-75,Miniatura WW espada matadora de deuses,50,Noély,1, ,
-76,Livro Alien,20,Noély,1, ,
-77,Revistas Omeletebox,8,Noély,1, ,
-78,Revistas Omeletebox,8,Noély,1, ,
-79,Revistas Omeletebox,8,Noély,1, ,
-80,Revistas Omeletebox,8,Noély,1, ,
-81,Revistas Omeletebox,8,Noély,1, ,
-82,Revistas Omeletebox,8,Noély,1, ,
-83,Revistas Omeletebox,8,Noély,1, ,
-84,Revistas Omeletebox,8,Noély,1, ,
-85,Postais Marvel 10 anos (conjunto com 8),25,Noély,1, ,
-86,Ovóide Darkseid,44,Noély,1, ,
-87,Ovóide Batman,44,Noély,1, ,
-88,Ovóide Lanterna Verde,44,Noély,1, ,
-89,Ovóide Batgirl,44,Noély,1, ,
-90,Ovóide Mulher-Maravilha,44,Noély,1, ,
-91,Ovóide Arlequina,44,Noély,1, ,
-92,Ovóide Coringa,44,Noély,1, ,
-93,Ovóide Asa Noturna,44,Noély,1, ,
-94,Ovóide Sinestro,44,Noély,1, ,
-95,Mousepad Flash,12,Noély,1, ,
-96,Ataque de Titãs 27,12,Tonhão,0, ,
-97,Vagabond (Nova Sampa) Vol. 15,12,Tonhão,0, ,
-98,Vagabond (Nova Sampa) Vol. 16,12,Tonhão,0, ,
-99,Vagabond (Nova Sampa) Vol. 17,12,Tonhão,0, ,
-100,Vagabond (Nova Sampa) Vol. 18,12,Tonhão,0, ,
-101,Pacote Vagabond (Nova Sampa) 4 edições,40,Tonhão,0, ,
-102,O Cerco (Minissérie de 1 a 4 e Especial),15,Tonhão,0, ,
-103,Invasão Secreta (Saga + Minissérie de 1 a 8),20,Tonhão,0, ,
-104,Invasão Secreta Especial 1 a 5,20,Tonhão,0, ,
-105,Pesadelo Supremo - Marvel Millennium (Minissérie de 1 a 8),25,Tonhão,0, ,
-106,Homem de Ferro - Marvel Millennium (Minissérie de 1 a 2),8,Tonhão,0, ,
-107,Wolverine VS. Hulk - Marvel Millennium (Minissérie de 1 a 3),10,Tonhão,0, ,
-108,Guerra Secreta (Marvel Apresenta e minissérie de 1 a 3),15,Tonhão,0, ,
-109,Capitão América - Morre uma Lenda (Minissérie de 1 a 2),8,Tonhão,0, ,
-110,Surfista Prateado - Réquiem (Minissérie de 1 a 2),8,Tonhão,0, ,
-111,Demolidor - Fim dos Dias (Volume 2),5,Tonhão,0, ,
-112,Odisseia Cósmica,35,Felipe,1, ,
-113,Thor Vikings,20,Felipe,1, ,
-114,Livro Guerra Civil,12,Felipe,1, ,
-115,Mangá One Punch Man Vol. 3,15,Felipe,1, ,
+1,Tecnodreams,30,Breno,1
+2,Tecnodreams,30,Breno,1
+3,Tecnodreams,30,Breno,1
+4,Jagunço Batismo de Sangue,30,Breno,1
+5,Jagunço Batismo de Sangue,30,Breno,1
+6,Escafandro: O Vampiro,20,Breno,1
+7,Escafandro: O Vampiro,20,Breno,1
+8,Escafandro: O Vampiro,20,Breno,1
+9,Escafandro: O Vampiro,20,Breno,1
+10,Escafandro: O Crime de Lorde Arthur Saville,20,Breno,1
+11,Escafandro: O Crime de Lorde Arthur Saville,20,Breno,1
+12,Escafandro: A Vida Eterna,20,Breno,1
+13,Escafandro: A Vida Eterna,20,Breno,1
+14,Escafandro: A Vida Eterna,20,Breno,1
+15,Slun Dunk 18 Edições,230,Leo,1
+16,Hellblazer Origens Vol. 1,20,Leo,1
+17,Hellblazer Origens Vol. 2,20,Leo,1
+18,Shinigami Death Note,50,Leo,1
+19,Beatles Rock Band,5,Leo,1
+20,Blu-ray Homem Formiga,5,Leo,1
+21,Blu-ray Vingadores,5,Leo,1
+22,Camisa Naruto Tamanho G,50,Tiago,1
+23,Camisa One Piece Tamanho G,50,Tiago,1
+24,Camisa Naruto Tamanho M,50,Tiago,1
+25,Camisa Jujutsu Tamanho M,50,Tiago,1
+26,Camisa Boku no Hero Tamanho M,50,Tiago,1
+27,Camisa Boruto Tamanho M,50,Tiago,1
+28,Camisa One Piece Tamanho M,50,Tiago,1
+29,Camisa Jujutsu Tamanho M,50,Tiago,1
+30,Camisa Jujutsu Tamanho P,50,Tiago,1
+31,Camisa Boku no Hero Tamanho P,50,Tiago,1
+32,Chaveiro Homem-Formiga,15,Noély,1
+33,Pin Vingadores,25,Noély,1
+34,Ovoides,35,Noély,1
+35,Base Marvel,15,Noély,1
+36,Espada WW,40,Noély,1
+37,Quebra-cabeça Batman,45,Noély,1
+38,Livro Alien,25,Noély,1
+39,Revista Omelete Box,5,Noély,1
+40,Revista Omelete Box,5,Noély,1
+41,Revista Omelete Box,5,Noély,1
+42,Revista Omelete Box,5,Noély,1
+43,Revista Omelete Box,5,Noély,1
+44,Revista Omelete Box,5,Noély,1
+45,Revista Omelete Box,5,Noély,1
+46,Revista Omelete Box,5,Noély,1
+47,Com 5 Revistas Omelete Box,20,Noély,1
+48,Poster Rafael Albuquerque,10,Noély,1
+49,Poster Rafael Albuquerque,10,Noély,1
+50,Poster Rafael Albuquerque,10,Noély,1
+51,Poster Rafael Albuquerque,10,Noély,1
+52,Poster Rafael Albuquerque,10,Noély,1
+53,Poster Rafael Albuquerque,10,Noély,1
+54,Poster Rafael Albuquerque,10,Noély,1
+55,Poster Omelete Aquaman,30,Noély,1
+56,Poster Omelete Homem-Formiga,30,Noély,1
+57,Poster Omelete Vilões Gotham,30,Noély,1
+58,Poster Omelete Hulk Gladiador,30,Noély,1
+59,Poster Omelete Thor,30,Noély,1
+60,Poster Omelete Supergirl,30,Noély,1
+61,Poster Omelete Batman DK,30,Noély,1
+62,Poster Omelete Coringa,30,Noély,1
+63,Poster Omelete Hawk Girl,30,Noély,1
+64,Poster Omelete Stormtrooper,30,Noély,1
+65,Poster Omelete Hela,30,Noély,1
+66,Poster Omelete Rocket Racoon,30,Noély,1
+67,Poster Omelete Pantera Negra,30,Noély,1
+68,Poster Omelete Batrangue,30,Noély,1
+69,Poster Omelete Batmóvel,30,Noély,1

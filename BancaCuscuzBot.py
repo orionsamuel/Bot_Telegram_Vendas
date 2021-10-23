@@ -157,8 +157,8 @@ def lucro(up1date, context):
                 totalCuscuz = totalCuscuz + (float(vendidos[3]) * 0.1)
             vendedores.add(vendidos[5])
 
-    arquivoLucroEscrita.write("Cuscuz HQ," + str(totalCuscuz) + " \n")
-    arquivoLucroEscrita.write("Cartão," + str(totalCartao) + " \n")
+    arquivoLucroEscrita.write("Cuscuz HQ," + str(totalCuscuz) + "," + "\n")
+    arquivoLucroEscrita.write("Cartão," + str(totalCartao) + "," + "\n")
 
     arquivoVendidosLeitura.close()
 
@@ -190,7 +190,7 @@ def lucro(up1date, context):
                     else:
                         totalVendedor = totalVendedor + (float(vendidos[3]) * 0.9)
         
-        arquivoLucroEscrita.write(str(it) + "," + str(totalVendedor) + " \n")
+        arquivoLucroEscrita.write(str(it) + "," + str(totalVendedor) + "," + "\n")
         totalVendedor = 0
         arquivoVendidosLeitura.close()
 
@@ -209,9 +209,9 @@ def lucro(up1date, context):
             totalGeralDinheiro = totalGeralDinheiro + float(vendidos[3])
 
     
-    arquivoLucroEscrita.write("Total Vendas Cartão" + "," + str(totalGeralCartao) + " \n")
-    arquivoLucroEscrita.write("Total Vendas Dinheiro" + "," + str(totalGeralDinheiro) + " \n")
-    arquivoLucroEscrita.write("Total Geral de Vendas" + "," + str(totalGeral) + " \n")
+    arquivoLucroEscrita.write("Total Vendas Cartão" + "," + str(totalGeralCartao) + "," + "\n")
+    arquivoLucroEscrita.write("Total Vendas Dinheiro" + "," + str(totalGeralDinheiro) + "," + "\n")
+    arquivoLucroEscrita.write("Total Geral de Vendas" + "," + str(totalGeral) + "," + "\n")
 
     arquivoVendidosLeitura.close()
 
