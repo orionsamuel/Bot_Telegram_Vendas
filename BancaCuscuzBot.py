@@ -1,4 +1,5 @@
 import re
+import os
 import telegram
 
 from telegram import User, InlineQueryResultArticle, ParseMode, \
@@ -53,13 +54,7 @@ def dinheiro(update, context):
 
     vendaRealizada = 0
 
-    for linha in arquivoVendidosLeitura:
-        vendaFeita = linha.split(',')
-        if(vendaFeita[1] == context.args[0]):
-            vendaRealizada = 1
-    if(vendaRealizada == 1):
-        update.message.reply_text("Venda já feita!")
-    else:
+    if(os.stat("vendidos.csv").st_size == 0):
         if(len(context.args) == 2):
             valorProduto = int(vendidoSeperado[2]) - int(context.args[1])
             arquivoVendidosEscrita.write(str((numLinhas + 1 )) + "," + str(vendidoSeperado[0]) + "," + str(vendidoSeperado[1]) + "," + str(valorProduto) + ",Dinheiro" + "," + str(vendidoSeperado[3]) + ","  + str(vendidoSeperado[4]) + ", \n") 
@@ -67,6 +62,21 @@ def dinheiro(update, context):
         else:
             arquivoVendidosEscrita.write(str((numLinhas + 1 )) + "," + str(vendidoSeperado[0]) + "," + str(vendidoSeperado[1]) + "," + str(vendidoSeperado[2]) + ",Dinheiro" + "," + str(vendidoSeperado[3]) + "," + str(vendidoSeperado[4]) + ", \n") 
             update.message.reply_text("Venda realizada com sucesso!")
+    else:
+        for linha in arquivoVendidosLeitura:
+            vendaFeita = linha.split(',')
+            if(vendaFeita[1] == context.args[0]):
+                vendaRealizada = 1
+        if(vendaRealizada == 1):
+            update.message.reply_text("Venda já feita!")
+        else:
+            if(len(context.args) == 2):
+                valorProduto = int(vendidoSeperado[2]) - int(context.args[1])
+                arquivoVendidosEscrita.write(str((numLinhas + 1 )) + "," + str(vendidoSeperado[0]) + "," + str(vendidoSeperado[1]) + "," + str(valorProduto) + ",Dinheiro" + "," + str(vendidoSeperado[3]) + ","  + str(vendidoSeperado[4]) + ", \n") 
+                update.message.reply_text("Venda realizada com sucesso!")
+            else:
+                arquivoVendidosEscrita.write(str((numLinhas + 1 )) + "," + str(vendidoSeperado[0]) + "," + str(vendidoSeperado[1]) + "," + str(vendidoSeperado[2]) + ",Dinheiro" + "," + str(vendidoSeperado[3]) + "," + str(vendidoSeperado[4]) + ", \n") 
+                update.message.reply_text("Venda realizada com sucesso!")
     
 
     arquivoVendidosLeitura.close()
@@ -96,13 +106,7 @@ def cartao(update, context):
 
     vendaRealizada = 0
 
-    for linha in arquivoVendidosLeitura:
-        vendaFeita = linha.split(',')
-        if(vendaFeita[1] == context.args[0]):
-            vendaRealizada = 1
-    if(vendaRealizada == 1):
-        update.message.reply_text("Venda já feita!")
-    else:
+    if(os.stat("vendidos.csv").st_size == 0):
         if(len(context.args) == 3):
             valorProduto = int(vendidoSeperado[2]) - int(context.args[2])
             arquivoVendidosEscrita.write(str((numLinhas + 1 )) + "," + str(vendidoSeperado[0]) + "," + str(vendidoSeperado[1]) + "," + str(valorProduto) + ",Cartão" + "," + str(context.args[1]) + "," + str(vendidoSeperado[3]) + "," + str(vendidoSeperado[4]) + ", \n") 
@@ -110,6 +114,21 @@ def cartao(update, context):
         else:
             arquivoVendidosEscrita.write(str((numLinhas + 1 )) + "," + str(vendidoSeperado[0]) + "," + str(vendidoSeperado[1]) + "," + str(vendidoSeperado[2]) + ",Cartão" + "," + str(context.args[1]) + "," + str(vendidoSeperado[3]) + "," + str(vendidoSeperado[4]) + ", \n") 
             update.message.reply_text("Venda realizada com sucesso!")
+    else:
+        for linha in arquivoVendidosLeitura:
+            vendaFeita = linha.split(',')
+            if(vendaFeita[1] == context.args[0]):
+                vendaRealizada = 1
+        if(vendaRealizada == 1):
+            update.message.reply_text("Venda já feita!")
+        else:
+            if(len(context.args) == 3):
+                valorProduto = int(vendidoSeperado[2]) - int(context.args[2])
+                arquivoVendidosEscrita.write(str((numLinhas + 1 )) + "," + str(vendidoSeperado[0]) + "," + str(vendidoSeperado[1]) + "," + str(valorProduto) + ",Cartão" + "," + str(context.args[1]) + "," + str(vendidoSeperado[3]) + "," + str(vendidoSeperado[4]) + ", \n") 
+                update.message.reply_text("Venda realizada com sucesso!")
+            else:
+                arquivoVendidosEscrita.write(str((numLinhas + 1 )) + "," + str(vendidoSeperado[0]) + "," + str(vendidoSeperado[1]) + "," + str(vendidoSeperado[2]) + ",Cartão" + "," + str(context.args[1]) + "," + str(vendidoSeperado[3]) + "," + str(vendidoSeperado[4]) + ", \n") 
+                update.message.reply_text("Venda realizada com sucesso!")
     
 
     arquivoVendidosLeitura.close()
