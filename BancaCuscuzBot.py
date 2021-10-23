@@ -14,7 +14,7 @@ def produtos(update, context):
     arquivoProdutos = open("produtos.csv", "r+")
     for linha in arquivoProdutos:
         saidaProdutos = linha.split(',')
-        update.message.reply_text(str(saidaProdutos[0]) + " " + str(saidaProdutos[1]) + " " + "(" + str(saidaProdutos[2]) + ")" + " " + str(saidaProdutos[3]))
+        update.message.reply_text(str(saidaProdutos[0]) + " - " + str(saidaProdutos[1]) + " - " + "(" + str(saidaProdutos[2]) + ")" + " - " + str(saidaProdutos[3]))
     arquivoProdutos.close()
 
 
@@ -23,7 +23,7 @@ def buscar(update, context):
     for linha in arquivoProdutos:
         if(re.search(context.args[0], linha, re.IGNORECASE)):
            encontrados = linha.split(',')
-           update.message.reply_text(str(encontrados[0]) + " " + str(encontrados[1]) + " " + "(" + str(encontrados[2]) + ")")
+           update.message.reply_text(str(encontrados[0]) + " - " + str(encontrados[1]) + " - " + "(" + str(encontrados[2]) + ")")
     arquivoProdutos.close()
 
 def cabecalhoVendas():
@@ -120,11 +120,11 @@ def vendidos(update, context):
     for linha in arquivoVendidosLeitura:
         vendidos = linha.split(',')
         if(vendidos[4] == "Cartão"):
-           update.message.reply_text(str(vendidos[1]) + " " + str(vendidos[2]) + " " + str(vendidos[3]) + " " + "(" + str(vendidos[4]) + ")"
-                                     + " " + str(vendidos[5]) + " " + str(vendidos[6]))
+           update.message.reply_text(str(vendidos[1]) + " - " + str(vendidos[2]) + " - " + str(vendidos[3]) + " - " + "(" + str(vendidos[4]) + ")"
+                                     + " - " + str(vendidos[5]) + " - " + str(vendidos[6]))
         else:
-            update.message.reply_text(str(vendidos[1]) + " " + str(vendidos[2]) + " " + str(vendidos[3]) + " " + "(" + str(vendidos[4]) + ")"
-                                      + " " + str(vendidos[5]))
+            update.message.reply_text(str(vendidos[1]) + " - " + str(vendidos[2]) + " - " + str(vendidos[3]) + " - " + "(" + str(vendidos[4]) + ")"
+                                      + " - " + str(vendidos[5]))
 
 def lucro(up1date, context):
     arquivoVendidosLeitura = open("vendidos.csv", "r+")
@@ -223,7 +223,7 @@ def planilha(update, context):
 
     for linha in arquivoLucroLeitura:
         lucros = linha.split(',')
-        update.message.reply_text(str(lucros[0]) + " " + "(" + str(lucros[1]) + ")")
+        update.message.reply_text(str(lucros[0]) + " - " + "(" + str(lucros[1]) + ")")
 
     arquivoLucroLeitura.close()
 
